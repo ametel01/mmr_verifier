@@ -178,11 +178,11 @@ fn bit_length(num: usize) -> usize {
 
 fn extract_state_root(rlp_encoded: Span<u8>) -> u256 {
     let start_index = 90;
-    let length = 33;
+    let length = 32;
     let mut state_root_bytes = array![];
 
     let mut i = start_index;
-    while i < start_index + length {
+    while i <= start_index + length {
         state_root_bytes.append(*rlp_encoded.at(i));
         i += 1;
     };
